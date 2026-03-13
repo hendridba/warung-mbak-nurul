@@ -493,6 +493,40 @@ align-items:center;
 padding:10px 20px;
 }
 
+/* animasi menu ditambahkan */
+@keyframes addBounce{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+.menu-added{
+animation:addBounce 0.35s ease;
+}
+
+/* animasi keranjang */
+@keyframes cartShake{
+0%{transform:translateX(0);}
+25%{transform:translateX(-3px);}
+50%{transform:translateX(3px);}
+75%{transform:translateX(-3px);}
+100%{transform:translateX(0);}
+}
+
+.cart-shake{
+animation:cartShake 0.3s;
+}
+
+.flying-item{
+position:fixed;
+z-index:9999;
+pointer-events:none;
+transition:all 0.7s cubic-bezier(.5,-0.5,.5,1.5);
+width:60px;
+height:60px;
+border-radius:10px;
+}
+
 
 </style>
 </head>
@@ -530,217 +564,217 @@ padding:10px 20px;
 <div class="menu-item">
 <h3>Wedang Jahe Sereh</h3>
 <span>Rp 6000</span>
-<button class="add-btn" onclick="addItem('Wedang Jahe Sereh',6000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Wedang Jahe Sereh',6000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Jahe Sereh</h3>
 <span>Rp 6000</span>
-<button class="add-btn" onclick="addItem('Es Jahe Sereh',6000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Jahe Sereh',6000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Wedang Jahe Sereh + Jeruk</h3>
 <span>Rp 7000</span>
-<button class="add-btn" onclick="addItem('Wedang Jahe Sereh Jeruk',7000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Wedang Jahe Sereh Jeruk',7000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Jahe Sereh + Jeruk</h3>
 <span>Rp 7000</span>
-<button class="add-btn" onclick="addItem('Es Jahe Sereh Jeruk',7000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Jahe Sereh Jeruk',7000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Wedang Jahe</h3>
 <span>Rp 6000</span>
-<button class="add-btn" onclick="addItem('Wedang Jahe',6000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Wedang Jahe',6000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Jahe</h3>
 <span>Rp 6000</span>
-<button class="add-btn" onclick="addItem('Es Jahe',6000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Jahe',6000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Teh Jahe</h3>
 <span>Rp 5000</span>
-<button class="add-btn" onclick="addItem('Teh Jahe',5000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Teh Jahe',5000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Teh Jahe</h3>
 <span>Rp 5000</span>
-<button class="add-btn" onclick="addItem('Es Teh Jahe Sereh',5000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Teh Jahe Sereh',5000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Teh Jahe Sereh</h3>
 <span>Rp 6000</span>
-<button class="add-btn" onclick="addItem('Teh Jahe Sereh',6000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Teh Jahe Sereh',6000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Teh Jahe Sereh</h3>
 <span>Rp 6000</span>
-<button class="add-btn" onclick="addItem('Es Teh Jahe',6000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Teh Jahe',6000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Teh Jahe Sereh + Jeruk</h3>
 <span>Rp 7000</span>
-<button class="add-btn" onclick="addItem('Teh Jahe Sereh Jeruk',7000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Teh Jahe Sereh Jeruk',7000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Teh Jahe Sereh + Jeruk</h3>
 <span>Rp 7000</span>
-<button class="add-btn" onclick="addItem('Es Teh Jahe Jeruk',7000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Teh Jahe Jeruk',7000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Wedang Sereh</h3>
 <span>Rp 3000</span>
-<button class="add-btn" onclick="addItem('Wedang Sereh',3000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Wedang Sereh',3000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Sereh</h3>
 <span>Rp 3000</span>
-<button class="add-btn" onclick="addItem('Es Sereh',3000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Sereh',3000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Teh Panas</h3>
 <span>Rp 3000</span>
-<button class="add-btn" onclick="addItem('Teh Panas',3000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Teh Panas',3000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Teh</h3>
 <span>Rp 3000</span>
-<button class="add-btn" onclick="addItem('Es Teh',3000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Teh',3000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Jeruk Panas</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Jeruk Panas',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Jeruk Panas',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Jeruk</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Es Jeruk',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Jeruk',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Lemon Tea Panas</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Lemon Tea Panas',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Lemon Tea Panas',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Lemon Tea</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Es Lemon Tea',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Lemon Tea',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Beng-beng Panas</h3>
 <span>Rp 5000</span>
-<button class="add-btn" onclick="addItem('Beng-beng Panas',5000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Beng-beng Panas',5000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Beng-beng</h3>
 <span>Rp 5000</span>
-<button class="add-btn" onclick="addItem('Es Beng-beng',5000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Beng-beng',5000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Chocolatos Panas</h3>
 <span>Rp 5000</span>
-<button class="add-btn" onclick="addItem('Chocolatos Panas',5000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Chocolatos Panas',5000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Chocolatos</h3>
 <span>Rp 5000</span>
-<button class="add-btn" onclick="addItem('Es Chocolatos',5000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Chocolatos',5000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Milo Panas</h3>
 <span>Rp 5000</span>
-<button class="add-btn" onclick="addItem('Milo Panas',5000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Milo Panas',5000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Milo</h3>
 <span>Rp 5000</span>
-<button class="add-btn" onclick="addItem('Es Milo',5000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Milo',5000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Cofeemix Panas</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Cofeemix Panas',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Cofeemix Panas',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Cofeemix</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Es Cofeemix',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Cofeemix',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Susu Kental Manis Putih Panas</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Susu Kental Manis Putih Panas',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Susu Kental Manis Putih Panas',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Susu Kental Manis Putih</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Es Susu Kental Manis Putih',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Susu Kental Manis Putih',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Susu Kental Manis Coklat Panas</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Susu Kental Manis Coklat Panas',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Susu Kental Manis Coklat Panas',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Susu Kental Manis Coklat</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Es Susu Kental Manis Coklat',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Susu Kental Manis Coklat',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Kopi Kapal Api</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Kopi Kapal Api',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Kopi Kapal Api',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Kopi ABC Susu</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Kopi Kapal Api',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Kopi Kapal Api',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Kopi Nescafe Panas</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Kopi Nescafe Panas',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Kopi Nescafe Panas',4000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Kopi Nescafe</h3>
 <span>Rp 4000</span>
-<button class="add-btn" onclick="addItem('Es Kopi Nescafe',4000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Kopi Nescafe',4000)">Tambah</button>
 </div>
 
 </div>
@@ -756,73 +790,73 @@ padding:10px 20px;
 <div class="menu-item">
 <h3>Susu Segar Ori Panas</h3>
 <span>Rp 7000</span>
-<button class="add-btn" onclick="addItem('Susu Segar Ori Panas',7000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Susu Segar Ori Panas',7000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Susu Segar Ori</h3>
 <span>Rp 7000</span>
-<button class="add-btn" onclick="addItem('Es Susu Segar Ori',7000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Susu Segar Ori',7000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Susu Segar Coklat Panas</h3>
 <span>Rp 8000</span>
-<button class="add-btn" onclick="addItem('Susu Segar Coklat Panas',8000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Susu Segar Coklat Panas',8000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Susu Segar Coklat</h3>
 <span>Rp 8000</span>
-<button class="add-btn" onclick="addItem('Es Susu Segar Coklat',8000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Susu Segar Coklat',8000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Susu Segar Strawberry Panas</h3>
 <span>Rp 8000</span>
-<button class="add-btn" onclick="addItem('Susu Segar Strawberry Panas',8000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Susu Segar Strawberry Panas',8000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Susu Segar Strawberry</h3>
 <span>Rp 8000</span>
-<button class="add-btn" onclick="addItem('Es Susu Segar Strawberry',8000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Susu Segar Strawberry',8000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Susu Segar Kopi Panas</h3>
 <span>Rp 8000</span>
-<button class="add-btn" onclick="addItem('Susu Segar Kopi Panas',8000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Susu Segar Kopi Panas',8000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Es Susu Segar Kopi</h3>
 <span>Rp 8000</span>
-<button class="add-btn" onclick="addItem('Es Susu Segar Kopi',8000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Es Susu Segar Kopi',8000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Susu Segar 1 Liter Ori</h3>
 <span>Rp 15000</span>
-<button class="add-btn" onclick="addItem('Susu Segar 1 Liter Ori',15000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Susu Segar 1 Liter Ori',15000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Susu Segar Coklat 1 Liter</h3>
 <span>Rp 20000</span>
-<button class="add-btn" onclick="addItem('Susu Segar Coklat 1 Liter',20000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Susu Segar Coklat 1 Liter',20000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Susu Segar Strawberry 1 Liter</h3>
 <span>Rp 20000</span>
-<button class="add-btn" onclick="addItem('Susu Segar Strawberry 1 Liter',20000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Susu Segar Strawberry 1 Liter',20000)">Tambah</button>
 </div>
 
 <div class="menu-item">
 <h3>Susu Segar Kopi 1 Liter</h3>
 <span>Rp 20000</span>
-<button class="add-btn" onclick="addItem('Susu Segar Kopi 1 Liter',20000)">Tambah</button>
+<button class="add-btn" onclick="addItem(event,'Susu Segar Kopi 1 Liter',20000)">Tambah</button>
 </div>
 
 </div>
@@ -854,7 +888,7 @@ padding:10px 20px;
 <div class="cart minimized">
 
 <div class="cart-header" onclick="toggleCart()">
-<div class="cart-header-left">
+<div class="cart-header-left" id="cartIcon">
 🛒 Lihat Keranjang <span id="cart-count">(0)</span>
 </div>
 
@@ -908,7 +942,21 @@ Kosongkan Keranjang
 
 let cart = JSON.parse(localStorage.getItem("cart")) || {}
 
-function addItem(name,price){
+function addItem(e,name,price){
+
+let card = e.target.closest(".menu-item")
+card.classList.add("menu-added")
+
+setTimeout(()=>{
+card.classList.remove("menu-added")
+},300)
+
+let cartBox=document.querySelector(".cart")
+cartBox.classList.add("cart-shake")
+
+setTimeout(()=>{
+cartBox.classList.remove("cart-shake")
+},300)
 
 if(!cart[name]){
 cart[name]={price:price,qty:0}
@@ -1015,6 +1063,38 @@ localStorage.removeItem("cart")
 renderCart()
 
 }
+
+}
+
+function flyToCart(imgElement){
+
+const cart=document.getElementById("cartIcon")
+
+const imgRect=imgElement.getBoundingClientRect()
+const cartRect=cart.getBoundingClientRect()
+
+const clone=imgElement.cloneNode(true)
+
+clone.classList.add("flying-item")
+
+clone.style.left=imgRect.left+"px"
+clone.style.top=imgRect.top+"px"
+
+document.body.appendChild(clone)
+
+setTimeout(()=>{
+
+clone.style.left=cartRect.left+"px"
+clone.style.top=cartRect.top+"px"
+clone.style.width="20px"
+clone.style.height="20px"
+clone.style.opacity="0.5"
+
+},10)
+
+setTimeout(()=>{
+clone.remove()
+},700)
 
 }
 
