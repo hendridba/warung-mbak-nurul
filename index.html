@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warung Mbak Nurul</title>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f6efe6;
+color:#333;
+padding-top:70px;
+padding-bottom:120px;
+}
+
+/* HEADER */
+
+header{
+background:#6b3e26;
+color:white;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+position:fixed;
+top:0;
+left:0;
+right:0;
+
+width:100%;
+box-sizing:border-box;
+
+z-index:1000;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+header{
+border-bottom:2px solid rgba(255,255,255,0.2);
+}
+
+nav{
+display:flex;
+gap:20px;
+}
+
+header h1{
+margin:0;
+font-size:20px;
+}
+
+nav a{
+color:white;
+margin-left:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+background:url("images/hero.jpg") center/cover no-repeat;
+height:150px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+color:white;
+position:relative;
+padding:20px;
+}
+
+/* overlay gelap supaya teks terbaca */
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,0.45);
+}
+
+/* isi hero */
+.hero h2,
+.hero p,
+.hero .btn{
+position:relative;
+z-index:2;
+}
+
+.hero h2{
+font-size:34px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+opacity:0.95;
+}
+
+.btn{
+background:#2f8f2f;
+color:white;
+padding:14px 30px;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#237323;
+transform:scale(1.05);
+}
+
+/* SECTION */
+
+.section{
+padding:40px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+/* MENU */
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.menu-item{
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-item h3{
+margin:0;
+font-size:16px;
+}
+
+.menu-item span{
+color:#6b3e26;
+font-weight:bold;
+}
+
+/* BUTTON TAMBAH */
+
+.add-btn{
+margin-top:10px;
+background:#2f8f2f;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:6px;
+cursor:pointer;
+width:100%;
+}
+
+/* CART */
+
+.cart{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:white;
+border-top:2px solid #ddd;
+padding:10px;
+box-shadow:0 -3px 10px rgba(0,0,0,0.2);
+z-index:999;
+}
+
+.cart-title{
+font-weight:bold;
+margin-bottom:5px;
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+margin-bottom:5px;
+font-size:14px;
+}
+
+.cart-controls button{
+margin:0 2px;
+}
+
+.total{
+font-weight:bold;
+margin-top:5px;
+}
+
+.clear-btn{
+width:100%;
+margin-top:10px;
+padding:14px;
+background:#d32525;
+border:none;
+color:white;
+font-size:16px;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+}
+
+footer{
+background:#3f2417;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(80px,1fr));
+gap:10px;
+margin-top:15px;
+}
+
+.gallery img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.cart-form{
+margin-top:10px;
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.cart-form input,
+.cart-form select{
+padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+.cart-form textarea{
+padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+resize:none;
+height:60px;
+}
+
+.cart-form input,
+.cart-form select,
+.cart-form textarea{
+padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+width:100%;
+}
+
+.cart-form textarea{
+height:60px;
+resize:none;
+}
+
+.cart{
+position:fixed;
+bottom:0;
+right:10px;
+width:320px;
+background:white;
+border-radius:12px 12px 0 0;
+box-shadow:0 -3px 15px rgba(0,0,0,0.2);
+font-size:14px;
+}
+
+.cart-header{
+background:#6b3e26;
+color:white;
+padding:12px;
+cursor:pointer;
+font-weight:bold;
+border-radius:12px 12px 0 0;
+}
+
+.cart-body{
+max-height:400px;
+overflow:auto;
+padding:10px;
+}
+
+.cart.minimized .cart-body{
+display:none;
+}
+
+.cart.minimized .cart-body{
+display:none;
+}
+
+.cart-header{
+background:#6b3e26;
+color:white;
+padding:10px 12px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+border-radius:12px 12px 0 0;
+}
+
+.clear-cart{
+background:#ff5252;
+border:none;
+color:white;
+padding:5px 10px;
+font-size:12px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.clear-cart:hover{
+background:#e33a3a;
+}
+
+.order-btn{
+width:100%;
+margin-top:10px;
+padding:14px;
+background:#25d366;
+border:none;
+color:white;
+font-size:16px;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+}
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+padding:5px;
+}
+
+.menu-item{
+background:white;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+display:flex;
+flex-direction:column;
+transition:transform 0.2s;
+}
+
+.menu-item:active{
+transform:scale(0.97);
+}
+
+.menu-img{
+width:100%;
+height:130px;
+object-fit:cover;
+}
+
+.menu-info{
+padding:10px;
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.menu-info h3{
+font-size:14px;
+margin:0;
+}
+
+.menu-info span{
+font-size:14px;
+font-weight:bold;
+color:#6b3e26;
+}
+
+.add-btn{
+margin-top:6px;
+background:#2f8f2f;
+color:white;
+border:none;
+padding:10px;
+border-radius:8px;
+font-size:14px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.cart{
+width:100%;
+left:0;
+right:0;
+border-radius:15px 15px 0 0;
+}
+
+.cart-body{
+max-height:50vh;
+overflow-y:auto;
+}
+
+.cart-form input,
+.cart-form select,
+.cart-form textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+.hero{
+padding:80px 20px;
+}
+
+.hero h2{
+font-size:24px;
+}
+
+header{
+padding:12px 15px;
+}
+
+header h1{
+font-size:18px;
+}
+
+body{
+padding-bottom:150px;
+}
+
+.cart-body{
+max-height:50vh;
+overflow-y:auto;
+transition:0.3s;
+}
+
+.lokasi-btn{
+display:inline-block;
+margin-top:15px;
+background:#d94b2b;
+color:white;
+padding:12px 20px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.lokasi-btn:hover{
+background:#b63c21;
+transform:scale(1.05);
+}
+
+.logo img{
+height:60px;
+width:auto;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 20px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="images/logo1.png" alt="Warung Mbak Nurul">
+</div>
+
+<nav>
+<a href="#menu">Menu Minuman</a>
+<a href="#snack">Camilan</a>
+<a href="#jumat">Spesial Jumat</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<h2>Warung Mbak Nurul</h2>
+
+<p>Minuman Jahe Hangat • Snack Malam • Nongkrong Santai</p>
+
+<a class="btn" href="#menu">Lihat Menu</a>
+
+</section>
+
+<section class="section" id="menu">
+
+<h2>☕ Menu Minuman</h2>
+
+<div class="menu-grid">
+
+<div class="menu-item">
+<h3>Wedang Jahe Sereh</h3>
+<span>Rp 6000</span>
+<button class="add-btn" onclick="addItem('Wedang Jahe Sereh',6000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Es Jahe Sereh</h3>
+<span>Rp 6000</span>
+<button class="add-btn" onclick="addItem('Es Jahe Sereh',6000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Wedang Jahe Sereh + Jeruk</h3>
+<span>Rp 7000</span>
+<button class="add-btn" onclick="addItem('Wedang Jahe Sereh Jeruk',7000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Es Jahe Sereh + Jeruk</h3>
+<span>Rp 7000</span>
+<button class="add-btn" onclick="addItem('Es Jahe Sereh Jeruk',7000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Wedang Jahe</h3>
+<span>Rp 6000</span>
+<button class="add-btn" onclick="addItem('Wedang Jahe',6000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Es Jahe</h3>
+<span>Rp 6000</span>
+<button class="add-btn" onclick="addItem('Es Jahe',6000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Teh Jahe</h3>
+<span>Rp 5000</span>
+<button class="add-btn" onclick="addItem('Teh Jahe',5000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Es Teh Jahe</h3>
+<span>Rp 5000</span>
+<button class="add-btn" onclick="addItem('Es Teh Jahe',5000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Teh Panas</h3>
+<span>Rp 3000</span>
+<button class="add-btn" onclick="addItem('Teh Panas',3000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Es Teh</h3>
+<span>Rp 3000</span>
+<button class="add-btn" onclick="addItem('Es Teh',3000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Jeruk Panas</h3>
+<span>Rp 3000</span>
+<button class="add-btn" onclick="addItem('Jeruk Panas',3000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Es Jeruk</h3>
+<span>Rp 3000</span>
+<button class="add-btn" onclick="addItem('Es Jeruk',3000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Kopi Kapal Api</h3>
+<span>Rp 4000</span>
+<button class="add-btn" onclick="addItem('Kopi Kapal Api',4000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Kopi Nescafe Panas</h3>
+<span>Rp 4000</span>
+<button class="add-btn" onclick="addItem('Kopi Nescafe Panas',4000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Es Kopi Nescafe</h3>
+<span>Rp 4000</span>
+<button class="add-btn" onclick="addItem('Es Kopi Nescafe',4000)">Tambah</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="snack">
+
+<h2>🍢 Camilan</h2>
+
+<div class="menu-grid">
+
+<div class="menu-item">
+<h3>Cilok Penyet</h3>
+<span>Rp 5000</span>
+<button class="add-btn" onclick="addItem('Cilok Penyet',5000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Cilok Kukus</h3>
+<span>Rp 5000</span>
+<button class="add-btn" onclick="addItem('Cilok Kukus',5000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Tempura Penyet</h3>
+<span>Rp 5000</span>
+<button class="add-btn" onclick="addItem('Tempura Penyet',5000)">Tambah</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="jumat">
+
+<h2>🥛 Menu Spesial Hari Jumat</h2>
+
+<div class="menu-grid">
+
+<div class="menu-item">
+<h3>Susu Segar Ori</h3>
+<span>Rp 7000</span>
+<button class="add-btn" onclick="addItem('Susu Segar Ori',7000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Susu Segar Varian Rasa</h3>
+<span>Rp 8000</span>
+<button class="add-btn" onclick="addItem('Susu Segar Varian',8000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Susu Literan</h3>
+<span>Rp 15000</span>
+<button class="add-btn" onclick="addItem('Susu Literan',15000)">Tambah</button>
+</div>
+
+<div class="menu-item">
+<h3>Susu Literan Special</h3>
+<span>Rp 20000</span>
+<button class="add-btn" onclick="addItem('Susu Literan Special',20000)">Tambah</button>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p><b>Warung Mbak Nurul</b></p>
+<p>Minuman Hangat & Camilan Malam</p>
+
+<a class="lokasi-btn" href="https://maps.app.goo.gl/PVyupAM9Ew3tC33d7" target="_blank">
+📍 Lihat Lokasi Warung
+</a>
+
+<div class="gallery">
+
+<img src="images/cilok.jpg">
+<img src="images/minuman.jpg">
+<img src="images/hero.jpg">
+<img src="images/wedang-jahe.jpg">
+
+</div>
+
+</footer>
+
+<!-- CART -->
+
+<div class="cart minimized">
+
+<div class="cart-header" onclick="toggleCart()">
+<div class="cart-header-left">
+🛒 Lihat Keranjang <span id="cart-count">(0)</span>
+</div>
+
+</div>
+
+<div class="cart-body" id="cart-body">
+
+<div id="cart-items"></div>
+
+<div class="total" id="total">
+Total: Rp 0
+</div>
+
+<div class="cart-form">
+
+<input type="text" id="nama" placeholder="Nama Pemesan">
+
+<input type="text" id="alamat" placeholder="Alamat / Divisi">
+
+<select id="pengiriman" onchange="toggleTitip()">
+<option value="Delivery">Delivery Ke Pemesan</option>
+<option value="Dititipkan">Dititipkan</option>
+</select>
+
+<input type="text" id="titip" placeholder="Dititipkan ke siapa?" style="display:none;">
+
+<textarea id="catatan" placeholder="Catatan Pesanan"></textarea>
+
+</div>
+
+<div class="menu-grid">
+<div class="menu-item">
+<button class="order-btn" onclick="orderWA()">
+Pesan via WhatsApp
+</button>
+</div>
+
+<div class="menu-item">
+<button class="clear-btn" onclick="clearCart(event)">
+Kosongkan Keranjang
+</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+function addItem(name,price){
+
+if(!cart[name]){
+cart[name]={price:price,qty:0}
+}
+
+cart[name].qty++
+
+renderCart()
+
+}
+
+function changeQty(name,delta){
+
+cart[name].qty+=delta
+
+if(cart[name].qty<=0){
+delete cart[name]
+}
+
+renderCart()
+
+}
+
+function renderCart(){
+
+let html=""
+let total=0
+let count=0
+
+if(Object.keys(cart).length===0){
+html="<i>Keranjang masih kosong</i>"
+}
+
+for(let name in cart){
+
+let item=cart[name]
+let subtotal=item.price*item.qty
+
+total+=subtotal
+count+=item.qty
+
+html+=`
+<div class="cart-item">
+<div>
+${name}<br>
+Rp${item.price.toLocaleString()} x ${item.qty} = Rp${subtotal.toLocaleString()}
+</div>
+
+<div class="cart-controls">
+<button onclick="changeQty('${name}',-1)">-</button>
+<button onclick="changeQty('${name}',1)">+</button>
+</div>
+
+</div>
+`
+}
+
+document.getElementById("cart-items").innerHTML=html
+document.getElementById("total").innerText="Total: Rp "+total.toLocaleString()
+document.getElementById("cart-count").innerText="("+count+")"
+
+localStorage.setItem("cart", JSON.stringify(cart))
+
+}
+
+function toggleTitip(){
+
+let metode=document.getElementById("pengiriman").value
+let titipField=document.getElementById("titip")
+
+if(metode=="Dititipkan"){
+titipField.style.display="block"
+}else{
+titipField.style.display="none"
+titipField.value=""
+}
+
+}
+
+function toggleCart(){
+
+let cartBox=document.querySelector(".cart")
+
+cartBox.classList.toggle("minimized")
+
+}
+
+function toggleCart1(){
+
+let cartBox=document.querySelector(".cart")
+
+cartBox.classList.toggle("minimized")
+
+}
+
+function clearCart(e){
+
+e.stopPropagation()
+
+if(confirm("Kosongkan semua pesanan?")){
+
+cart={}
+localStorage.removeItem("cart")
+renderCart()
+
+}
+
+}
+
+function orderWA(){
+
+if(Object.keys(cart).length===0){
+alert("Keranjang masih kosong")
+return
+}
+
+let nomor="6287742299120"
+
+let nama=document.getElementById("nama").value
+let alamat=document.getElementById("alamat").value
+let pengiriman=document.getElementById("pengiriman").value
+let titip=document.getElementById("titip").value
+let catatan=document.getElementById("catatan").value
+
+if(nama=="" || alamat==""){
+alert("Nama dan alamat harus diisi")
+return
+}
+
+if(pengiriman=="Dititipkan" && titip==""){
+alert("Isi dititipkan ke siapa")
+return
+}
+
+let pesan="*WARUNG MBAK NURUL*%0A%0A"
+
+pesan+="Nama : "+nama+"%0A"
+pesan+="Alamat/Divisi : "+alamat+"%0A"
+pesan+="Pengiriman : "+pengiriman+"%0A"
+
+if(pengiriman=="Dititipkan"){
+pesan+="Titip ke : "+titip+"%0A"
+}
+
+pesan+="%0A-----------------------------%0A"
+pesan+="PESANAN%0A"
+pesan+="-----------------------------%0A%0A"
+
+let total=0
+
+for(let name in cart){
+
+let item=cart[name]
+let subtotal=item.price*item.qty
+
+total+=subtotal
+
+pesan+=name+"%0A"
+pesan+="Rp"+item.price.toLocaleString("id-ID")+" x "+item.qty+" = Rp"+subtotal.toLocaleString("id-ID")+"%0A%0A"
+
+}
+
+pesan+="-----------------------------%0A"
+pesan+="TOTAL : Rp"+total.toLocaleString("id-ID")+"%0A"
+pesan+="-----------------------------%0A"
+
+if(catatan!=""){
+pesan+="%0ACatatan:%0A"+catatan+"%0A"
+}
+
+pesan+="%0ATerima kasih"
+
+let url="https://wa.me/"+nomor+"?text="+pesan
+
+window.open(url)
+
+}
+
+
+renderCart()
+
+</script>
+
+</body>
+</html>
